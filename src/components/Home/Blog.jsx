@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import BlogPost from "../../components/Blog/BlogPost";
 import * as blogService from "../../services/blogService";
 
 export default function Blog() {
+
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -11,35 +11,24 @@ export default function Blog() {
   }, [posts]);
 
 
-
- 
   return (
     <>
-      <div className="page-nav">
+      <div id="blog" className="blog">
         <div className="container">
-          <div className="row">
-            <h2 className="text-start">Our Blogs</h2>
-            <ul>
-              <li>
-                {" "}
-                <Link to="/blog/create">
-                  <i className="bi bi-house-door"></i> Add Blog post
-                </Link>
-              </li>
-              {/* <li> <i className="bi bi-chevron-double-right pe-2"></i> Blogs</li> */}
-            </ul>
+          <div className="section-title">
+            <h2 className="fw-bolder">Blog</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+              ipsum sit nibh amet egestas tellus.
+            </p>
           </div>
-        </div>
-      </div>
-
-      <div id="blog-page" className="blog-page">
-        <div className="container-page">
           <div className="row-blog">
-            {posts.map((post) => {
+          {posts.slice(-3).map((post) => {
                 let keys = Object.keys(post).join('');
                 let data = Object.values(post);
 
                 return <BlogPost key={keys} id={keys} {...data[0]} />
+             
             })}
           </div>
         </div>

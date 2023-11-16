@@ -1,0 +1,25 @@
+import * as request from "../lib/request";
+
+const baseUrl = 'https://honey-blog-db181-default-rtdb.europe-west1.firebasedatabase.app/blog'
+
+export const getAll = async () => {
+    const result = await request.get(`${baseUrl}.json`);
+    
+    const nestedObjectsArray = Object.entries(result).map(([key, value]) => ({ [key]: value }));
+
+    return nestedObjectsArray;
+};
+
+export const getOne = async (postId) => {
+    const result = await request.get(`${baseUrl}/${postId}.json`, );
+
+    return result;
+}
+
+export const create = async (postData) => {
+    const result = await request.post(`${baseUrl}.json`, postData);
+
+    return result;
+};
+
+

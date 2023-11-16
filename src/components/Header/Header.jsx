@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 //Import classes from CSS and Pictures files
-import logo from '../assets/images/logo.png';
+import logo from '../../assets/images/logo.png';
 import classes from './Header.module.css';
 
 
