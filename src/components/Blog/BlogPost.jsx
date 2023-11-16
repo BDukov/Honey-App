@@ -19,7 +19,7 @@ export default function BlogPost({
               <div className="serv-cove rounded bg-white p-2">
                   <img src={imageUrl} alt=""/>
                     <div className="p-2">
-                         <h5 className="mt-3 fs-7 fw-bold">{title}</h5>
+                         <h5 className="blog-post-title">{title}</h5>
                          <span className="fs-8">{date}</span>
                          <span className="float-end fs-8"><i className="bi bi-person"></i>{creator}</span>
                   </div>
