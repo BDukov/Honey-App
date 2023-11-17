@@ -897,4 +897,26 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 0.8em;;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.nav-links li {
+  list-style-type: none;
+  text-decoration: none;
+  margin-right: 1.4em;
+}
+.nav-links li:not(:first-child) {
+  list-style-type: "> ";
+  text-decoration: none;
+  margin-right: 1.4em;
+}
+
+.text-start {
+  text-align: center;
 }

@@ -20,8 +20,8 @@ export default function BlogDetails() {
 <div className="page-nav details">
             <div className="container">
                 <div className="row">
-                    <h2 className="text-start">{post.title}</h2>
-                    <ul>
+                    <h2 className="text-start">DETAILS</h2>
+                    <ul className="nav-links">
                         <li><Link to="/">Home</Link></li>
                           <li><Link to="/blog">Blog</Link></li>
                         <li> {post.title}</li>
@@ -40,16 +40,15 @@ export default function BlogDetails() {
                     <h2>{post.title}</h2>
                     <p>{post.description}</p>
                     <div className="creator-info">
-                        <p>{post.date}</p>
-                        <p>{post.creator}</p>
+                        <p>Created at: {post.date}</p>
+                        <p>By: {post.creator}</p>
                     </div>
                 </div>
             </div>
 
             </div>
         </div>
-           
-    
+         
             
  
     
