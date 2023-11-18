@@ -23,3 +23,9 @@ export const create = async (postData) => {
 };
 
 
+export const deleteOne = async (postId) => {
+    const result = await request.remove(`${baseUrl}/${postId}.json`);
+
+    return result;
+}
+

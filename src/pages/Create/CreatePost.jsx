@@ -19,7 +19,7 @@ export default function CreatePost() {
 
     formValues.date = new Date().toLocaleDateString();
 
-    //Must be changed with user id
+    //Must be changed with user id or email
     formValues.creator = "user";
 
     blogService.create(formValues);

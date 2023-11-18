@@ -8,8 +8,9 @@ import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import Blog from './pages/Blog/Blog'
-import CreatePost from './components/Blog/CreatePost'
+import CreatePost from './pages/Create/CreatePost'
 import BlogDetails from './components/Blog/BlogDetails'
+import EditPost from './pages/Edit/EditPost'
 // import { useAuthContext } from './hooks/useAuthContext'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <Route path='/blog' element={<Blog />}/>
       <Route path='/blog/create' element={<CreatePost />} />
       <Route path='/blog/:postId' element={<BlogDetails/>} />
+      <Route path='/blog/:postId/edit' element={<EditPost />} />
     </Routes>
     <Footer />
    
