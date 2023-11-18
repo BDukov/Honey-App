@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import * as blogService from "../../services/blogService";
 import * as commentsService from "../../services/commentsService";
@@ -17,6 +18,7 @@ export default function BlogDetails() {
 
     const [formValues, setFormValues] = useState(formInitialState);
 
+    const navigate = useNavigate();
 
     useEffect(() => {
         blogService.getOne(postId)
@@ -30,6 +32,11 @@ export default function BlogDetails() {
         commentsService.getAll(postId)
         .then(setComments);
     }, [comments]);
+
+    useEffect(() => {
+        blogService.getOne(postId)
+        .then(setPost)
+    }, [post]);
 
     const addCommentHandler = async (e) => {
         e.preventDefault();
@@ -53,10 +60,11 @@ export default function BlogDetails() {
       };
 
     const onDeleteHandler = () => {
+        alert("Are you sure you want to delete this post?");
         blogService.deleteOne(postId)
             .then(() => {
-                console.log("Deleted successfully!");
-            });
+                navigate("/blog");
+                });
     };
 
     return(

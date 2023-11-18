@@ -29,3 +29,8 @@ export const deleteOne = async (postId) => {
     return result;
 }
 
+export const update = async (postId, postData) => {
+    const result = await request.put(`${baseUrl}/${postId}.json`, postData);
+
+    return result;
+}

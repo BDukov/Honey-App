@@ -1,9 +1,60 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import * as blogService from "../../services/blogService";
 
+ const initialFormState = {
+  title: "",
+  imageUrl: "",
+  description: "",
+  date: "",
+  creator: "",
+};
+
 export default function EditPost() {
+  const [post, setPost] = useState({});
+  const [formValues, setFormValues] = useState(initialFormState);
+  const { postId } = useParams();
+  const navigate = useNavigate();
+
+  console.log(formValues);
+
+  useEffect(() => {
+    blogService.getOne(postId)
+    .then(setPost)
+  }, [postId]);
+
+  useEffect(() => {
+    setFormValues({
+      title: post.title,
+      imageUrl: post.imageUrl,
+      description: post.description,
+      date: post.date,
+      creator: post.creator,
+    })
+  }, [post]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    formValues.date = new Date().toLocaleDateString();
+
+    //Must be changed with user id or email
+    formValues.creator = "user";
+
+    console.log(formValues);
+    blogService.update(postId, formValues);
+
+    navigate(`/blog/${postId}`);
+  };
+
+  const changeHandler = (e) => {
+    setFormValues((state) => ({
+      ...state,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
     return(
         <div className="edit-post">
