@@ -59,6 +59,7 @@ export default function CreatePost() {
             value={formValues.title}
             onChange={changeHandler}
             placeholder="Enter title..."
+            required
           />
           <br />
 
@@ -70,6 +71,7 @@ export default function CreatePost() {
             value={formValues.imageUrl}
             onChange={changeHandler}
             placeholder="Enter image url..."
+            required
           />
           <br />
 
@@ -81,6 +83,7 @@ export default function CreatePost() {
             value={formValues.description}
             onChange={changeHandler}
             placeholder="Enter description here..."
+            required
           />
           {/* <input name="description" value={formValues.description} onChange={changeHandler} /> */}
 

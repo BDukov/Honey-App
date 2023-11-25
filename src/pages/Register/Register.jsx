@@ -4,11 +4,17 @@ import { useRegister } from "../../hooks/useRegister";
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [repassword, setRepassword] = useState("");
+  const [errors, setErrors] = useState({});
   const { error, register } = useRegister();
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (password !== repassword) {
+      setErrors({ password: "Passwords don't match!" });
+      return;
+    }
+    setErrors({});
     register(email, password);
   };
 
@@ -37,12 +43,24 @@ export default function Register() {
                 <input
                   required
                   type="password"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {setPassword(e.target.value); setErrors({})}}
                   value={password}
                   className="form-control"
                   id="password"
                 />
               </div>
+              <div className="repassword-form">
+                <label>Repeat Password</label> <br />
+                <input
+                  required
+                  type="password"
+                  onChange={(e) => {setRepassword(e.target.value); setErrors({})}}
+                  value={repassword}
+                  className="form-control"
+                  id="repassword"
+                />
+              </div>
+              {errors && <p className="error-message">{errors.password}</p>}
               <div className="register-button">
                 <button type="submit" className="btn" id="btn">
                   Sign Up
@@ -51,7 +69,7 @@ export default function Register() {
                   If you are registered allready, please <a href="">Login</a>{" "}
                   here.
                 </p>
-                {error && <p>{error}</p>}
+                {error && <p className="error-message">{error}</p>}
               </div>
             </div>
           </form>
