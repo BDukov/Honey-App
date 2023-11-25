@@ -31,7 +31,7 @@ function App() {
       <Route path='/blog/create' element={<CreatePost />} />
       <Route path='/blog/:postId' element={<BlogDetails/>} />
       <Route path='/blog/:postId/edit' element={<EditPost />} />
-      <Route path='honey/:postId' element={<HoneyDetails/>} />
+      <Route path='/honey/:postId' element={<HoneyDetails/>} />
       <Route path='*' element={<PageNotFound/>} />
     </Routes>
     <Footer />
