@@ -6,6 +6,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const { error, register } = useRegister();
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     register(email, password);

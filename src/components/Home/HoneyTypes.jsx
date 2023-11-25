@@ -1,4 +1,15 @@
+import { useState, useEffect } from "react";
+
+import * as honeyTypeService from "../../services/honeyTypeService";
+import HoneyTypeItem from "../HoneyTypes/HoneyTypeItem";
+
 export default function HoneyTypes() {
+
+    const [posts, setPosts] = useState([]); 
+
+    useEffect(() => {
+        honeyTypeService.getAll().then((result) => setPosts(result));
+     }, []);
 
     return (
         <>
@@ -10,64 +21,12 @@ export default function HoneyTypes() {
                     dolor sit amet, consectetuer adipiscing elit.</p>
             </div>
             <div className="row">
-                <div className="col">
-                    <a href="detail.html">
-                        <div className="product-bg-white">
-                            <img src="/src/assets/images/products/p1.png" alt=""/>
-                            <div className="d-inline-block">
-                                <h4 className="honey-type-1">Manuka Honey</h4>
+            {posts.slice(-4).map((post) => {
+                let keys = Object.keys(post).join('');
+                let data = Object.values(post);
 
-                            </div>
-                            <div className="d-inline-block mt-3">
-                                <button className="btn-honey-details">Details</button>
-                            </div>
-
-                        </div>
-                    </a>
-                </div>
-                <div className="col">
-                    <a href="detail.html">
-                        <div className="product-bg-white">
-                            <img src="./src/assets/images/products/p2.png" alt=""/>
-                            <div className="d-inline-block">
-                                <h4 className="honey-type-1">Raw Honey</h4>
-                            </div>
-                            <div className="d-inline-block mt-3">
-                                <button className="btn-honey-details">Details</button>
-                            </div>
-
-                        </div>
-                    </a>
-                </div>
-                <div className="col">
-                    <a href="detail.html">
-                        <div className="product-bg-white">
-                            <img src="/src/assets/images/products/p3.png" alt=""/>
-                            <div className="d-inline-block">
-                                <h4 className="honey-type-1">Wild Flower Honey</h4>
-                            </div>
-                            <div className="d-inline-block mt-3">
-                                <button className="btn-honey-details">Details</button>
-                            </div>
-
-                        </div>
-                    </a>
-                </div>
-                <div className="col">
-                    <a href="detail.html">
-                        <div className="product-bg-white">
-                            <img src="/src/assets/images/products/p4.png" alt=""/>
-                            <div className="d-inline-block">
-                                <h4 className="honey-type-1">Queen Bee Honey</h4>
-
-                            </div>
-                            <div className="d-inline-block mt-3">
-                                <button className="btn-honey-details">Details</button>
-                            </div>
-
-                        </div>
-                    </a>
-                </div>
+                return <HoneyTypeItem key={keys} id={keys} {...data[0]} />           
+            })}
             </div>
         </div>
     </div>

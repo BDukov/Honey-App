@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { createContext, useReducer, useEffect } from 'react'
 import { auth } from '../firebase/config'

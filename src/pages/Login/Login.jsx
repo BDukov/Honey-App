@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { useLogin } from "../../hooks/useLogin";
 
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, error } = useLogin();
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     login(email, password);
+
+
   };
 
   return (
@@ -43,6 +47,7 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
               value={password} className="form-control" id="password" />
             </div>
+            {error && <div className="error">{error} </div>}
             <div className="login-button">
             <button type="submit" className="btn" id="btn">
               Login
@@ -50,7 +55,6 @@ export default function Login() {
             <p>If you are not registered, please <a href="">Register</a> here.</p>
             </div>
             </div>
-            {error && <div className="error">{error} </div>}
           </form>
         </div>
       </div>

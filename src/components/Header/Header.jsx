@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
-
+import { useLogout } from "../../hooks/useLogout";
 
 //Import classes from CSS and Pictures files
 import logo from '../../assets/images/logo.png';
 import classes from './Header.module.css';
+import { useAuthContext } from "../../hooks/useAuthContext"
 
 
 export default function Header() {
-
+    const { logout } = useLogout();
+    const { user } = useAuthContext();
 
   return (
-
-    // <div className="container">
+    
         <div className={classes.header}>
             <div className={classes.logo}>
                 <Link to="/"><img src={logo} alt=""/></Link>
@@ -26,24 +27,25 @@ export default function Header() {
                             behavior: 'smooth',
                         })
                     }}><a href="#">About Us</a></li>
+                    
                     <li onClick={(e) => {
                         e.preventDefault();
                         window.scrollTo({
                             top:document.querySelector('.types-of-honey').offsetTop,
                             behavior: 'smooth',
                         })
-                    }}><a href="#">Types Of Honey</a></li>
+                    }}><a href="#">Honey Types</a></li>
                     <li><Link to='/blog'>Blog</Link></li>
                 </ul>
             </div>
             <div className={classes.user}>
                 <ul>
-                <li><Link to="/register">Register</Link></li>
-                <li><Link to="/login">Login</Link></li>
-                <li><Link to="/">Logout</Link></li>
+                    {!user && <li><Link to="/login">Login</Link></li>}
+                    {!user && <li><Link to="/register">Register</Link></li>}            
+                    {user && <li><a href="">{user.email}</a></li>}
+                    {user && <li><Link to="/" onClick={logout}>Logout</Link></li>}
                 </ul>
             </div>
         </div>
-    // </div>
   );
 }

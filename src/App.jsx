@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-undef */
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
 import Header from './components/Header/Header'
@@ -11,14 +11,17 @@ import Blog from './pages/Blog/Blog'
 import CreatePost from './pages/Create/CreatePost'
 import BlogDetails from './components/Blog/BlogDetails'
 import EditPost from './pages/Edit/EditPost'
-// import { useAuthContext } from './hooks/useAuthContext'
+import HoneyDetails from './components/HoneyTypes/HoneyDetails'
+import { AuthContextProvider } from './context/AuthContext'
+import PageNotFound from './components/404/404'
+
 
 function App() {
-  // const { user , authReady } = useAuthContext();
 
   return (
     <>
 
+<AuthContextProvider>
     <Header />
     <Routes>
       <Route path="/" element={<Home/>} />
@@ -28,9 +31,13 @@ function App() {
       <Route path='/blog/create' element={<CreatePost />} />
       <Route path='/blog/:postId' element={<BlogDetails/>} />
       <Route path='/blog/:postId/edit' element={<EditPost />} />
+      <Route path='honey/:postId' element={<HoneyDetails/>} />
+      <Route path='*' element={<PageNotFound/>} />
     </Routes>
     <Footer />
-   
+</AuthContextProvider>
+
+  
 
     </>
   )

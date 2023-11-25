@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as blogService from "../../services/blogService";
 
+import { useAuthContext } from "../../hooks/useAuthContext";
+
 const formInitialState = {
   title: "",
   imageUrl: "",
@@ -14,13 +16,15 @@ export default function CreatePost() {
   const [formValues, setFormValues] = useState(formInitialState);
   const navigate = useNavigate();
 
+  const {user} = useAuthContext();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     formValues.date = new Date().toLocaleDateString();
 
     //Must be changed with user id or email
-    formValues.creator = "user";
+    formValues.creator = user.email;
 
     blogService.create(formValues);
 
