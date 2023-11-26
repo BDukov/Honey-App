@@ -1,3 +1,4 @@
+import './Fluid.css';
 
 export default function Fluid() {
     return (

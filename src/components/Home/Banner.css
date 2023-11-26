@@ -1,0 +1,70 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/assets/images/slider/s2.jpg);
+    background-position-x: center;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+  }
+  
+  .hero-banner .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: #515151;
+    /* background: blue; */
+    min-height: 27em;
+  }
+  
+  .hero-banner .container h1:first-child {
+    margin-top: 1em;
+  }
+  .hero-banner .container h1 {
+    font-weight: 500;
+  }
+  .hero-banner .container p {
+    font-family: "PT Sans";
+    font-weight: 500;
+    margin-top: 1em;
+    width: 64ch;
+  }
+  
+  .hero-banner img {
+    display: block;
+    max-width: 30em;
+    height: auto;
+  }
+  
+  .hero-banner .container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+  }
+  
+  .banner-image {
+    text-align: center;
+  }
+  
+  .banner-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2em;
+  }
+  
+  .red-text {
+    color: #f16f7e;
+  }
+  
+  .banner-info h1 {
+    font-size: 2.5em;
+    font-weight: 800;
+    /* align-self: stretch; */
+  }
+  
+  .banner-info p {
+    /* align-self: stretch; */
+  }

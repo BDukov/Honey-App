@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 import * as blogService from "../../services/blogService";
+
+import "./EditPost.css";
 
  const initialFormState = {
   title: "",
@@ -17,6 +20,7 @@ export default function EditPost() {
   const [formValues, setFormValues] = useState(initialFormState);
   const { postId } = useParams();
   const navigate = useNavigate();
+  const { user } = useAuthContext();
 
   console.log(formValues);
 
@@ -41,7 +45,8 @@ export default function EditPost() {
     formValues.date = new Date().toLocaleDateString();
 
     //Must be changed with user id or email
-    formValues.creator = "user";
+    formValues.creator = user.email;
+    formValues.userId = user.uid;
 
     console.log(formValues);
     blogService.update(postId, formValues);
@@ -60,7 +65,7 @@ export default function EditPost() {
         <div className="edit-post">
         <form id="edit" onSubmit={handleSubmit}>
           <div className="container">
-            <h1>Create Blog-Post</h1>
+            <h1>Edit Blog-Post</h1>
             <label>Title:</label>
             <input
               type="text"

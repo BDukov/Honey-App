@@ -1,0 +1,47 @@
+.fluid-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3em 0 3em 0;
+  }
+  
+  .section-title-row {
+    /* margin: 3em 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+  }
+  
+  .section-title-row h2 {
+    text-align: center;
+    font-size: 2em;
+  }
+  
+  .section-title-row p {
+    text-align: center;
+    font-size: 0.8em;
+  }
+  
+  .products-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3em;
+  }
+  
+  .products-row img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .cover-text-center {
+    text-align: center;
+  }
+  
+  .cover-text-center h2 {
+    margin-top: 0.6em;
+  }

@@ -8,6 +8,8 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import * as blogService from "../../services/blogService";
 import * as commentsService from "../../services/commentsService";
 
+import "./BlogDetails.css";
+
 const formInitialState = {
   username: "",
   comment: "",

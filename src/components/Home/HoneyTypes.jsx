@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import * as honeyTypeService from "../../services/honeyTypeService";
 import HoneyTypeItem from "../HoneyTypes/HoneyTypeItem";
 
+import "./HoneyTypes.css";
+
 export default function HoneyTypes() {
 
     const [posts, setPosts] = useState([]); 

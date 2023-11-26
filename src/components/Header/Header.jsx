@@ -21,7 +21,13 @@ export default function Header() {
             </div>
             <div className={classes.nav}>
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li onClick={(e) => {
+                        e.preventDefault();
+                        setTimeout(() => {
+                        }, 500)
+                        navigate('/');
+                    }}><a href="/">Home</a></li>
+
                     <li onClick={(e) => {
                         e.preventDefault();
                         setTimeout(() => {

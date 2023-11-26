@@ -1,0 +1,25 @@
+.error-page {
+    /* margin-bottom: 5em; */
+    background-image: url(/assets/images/slider/s2.jpg);
+    background-position-x: center;
+    background-size: cover;
+    background-color: #FFE7C5;
+  }
+  
+  .error-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    min-height: 60vh;
+  }
+  
+  .notfound {
+    margin-top: 10em;
+    margin-left: 2em;
+    font-size: 5em;
+    font-weight: 700;
+    margin-top: 0.5em;
+    text-align: center;
+    /* background: red; */
+  }

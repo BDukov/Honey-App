@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useLogin } from "../../hooks/useLogin";
 
+import "./Login.css";
+
 
 export default function Login() {
   const [email, setEmail] = useState("");

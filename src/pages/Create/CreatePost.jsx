@@ -4,6 +4,8 @@ import * as blogService from "../../services/blogService";
 
 import { useAuthContext } from "../../hooks/useAuthContext";
 
+import "./CreatePost.css";
+
 const formInitialState = {
   title: "",
   imageUrl: "",

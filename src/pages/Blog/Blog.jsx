@@ -4,6 +4,8 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import BlogPost from "../../components/Blog/BlogPost";
 import * as blogService from "../../services/blogService";
 
+import "./Blog.css";
+
 export default function Blog() {
   const [posts, setPosts] = useState([]);
   const { user } = useAuthContext();

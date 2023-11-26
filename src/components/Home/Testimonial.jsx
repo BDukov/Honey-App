@@ -1,3 +1,5 @@
+import './Testimonial.css';
+
 export default function Testimonial() {
 
     return(
