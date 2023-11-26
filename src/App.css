@@ -42,7 +42,7 @@ a {
 .banner {
   display: flex;
   flex-direction: column;
-  background-image: url(./assets/images/slider/s2.jpg);
+  background-image: url(/assets/images/slider/s2.jpg);
   background-position-x: center;
   /* background-repeat: no-repeat; */
   background-size: cover;
@@ -501,7 +501,7 @@ a {
   flex-direction: row;
   align-items: center;
   text-align: center;
-  background-image: url(./assets/images/slider/s2.jpg);
+  background-image: url(/assets/images/slider/s2.jpg);
   background-position-x: center;
   background-size: cover;
 }
@@ -588,7 +588,7 @@ a {
   flex-direction: row;
   align-items: center;
   text-align: center;
-  background-image: url(./assets/images/slider/s2.jpg);
+  background-image: url(/assets/images/slider/s2.jpg);
   background-position-x: center;
   background-size: cover;
 }
@@ -700,7 +700,7 @@ a {
 
 .blog-page {
   /* margin-bottom: 5em; */
-  background-image: url(./assets/images/slider/s2.jpg);
+  background-image: url(/assets/images/slider/s2.jpg);
   background-position-x: center;
   background-size: cover;
   background-color: #FFE7C5;
@@ -800,7 +800,7 @@ a {
 
 .create-post {
   /* margin-bottom: 5em; */
-  background-image: url(./assets/images/slider/s2.jpg);
+  background-image: url(/assets/images/slider/s2.jpg);
   background-position-x: center;
   background-size: cover;
 }
@@ -866,7 +866,7 @@ a {
   display: flex;
   flex-direction: column;
 
-    background-image: url(./assets/images/slider/s2.jpg);
+    background-image: url(/assets/images/slider/s2.jpg);
     background-position-x: center;
     background-size: cover;
 }
@@ -1083,7 +1083,7 @@ a {
 
 .edit-post {
   /* margin-bottom: 5em; */
-  background-image: url(./assets/images/slider/s2.jpg);
+  background-image: url(/assets/images/slider/s2.jpg);
   background-position-x: center;
   background-size: cover;
 }
@@ -1162,7 +1162,7 @@ a {
 
 .honey-type-page {
   /* margin-bottom: 5em; */
-  background-image: url(./assets/images/slider/s2.jpg);
+  background-image: url(/assets/images/slider/s2.jpg);
   background-position-x: center;
   background-size: cover;
   background-color: #FFE7C5;
@@ -1304,7 +1304,7 @@ a {
 
 .error-page {
   /* margin-bottom: 5em; */
-  background-image: url(./assets/images/slider/s2.jpg);
+  background-image: url(/assets/images/slider/s2.jpg);
   background-position-x: center;
   background-size: cover;
   background-color: #FFE7C5;

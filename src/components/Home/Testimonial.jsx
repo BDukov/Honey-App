@@ -13,7 +13,7 @@ export default function Testimonial() {
                     <div className="serv-cove">
                         <div className="prf row mb-3">
                             <div className="col-3">
-                                <img className="rounded-pill" src="/src/assets/images/testimonial/member-01.jpg" alt=""/>
+                                <img className="rounded-pill" src="/assets/images/testimonial/member-01.jpg" alt=""/>
                             </div>
                             <div className="col-9 align-self-center">
                                 <h6 className="mb-0 fw-bolder">Vinoth Parkash</h6>
@@ -32,7 +32,7 @@ export default function Testimonial() {
                     <div className="serv-cove">
                         <div className="prf row mb-3">
                             <div className="col-3">
-                                <img className="rounded-pill" src="/src/assets/images/testimonial/member-03.jpg" alt=""/>
+                                <img className="rounded-pill" src="/assets/images/testimonial/member-03.jpg" alt=""/>
                             </div>
                             <div className="col-9 align-self-center">
                                 <h6 className="mb-0 fw-bolder">Jackson Daniel</h6>
@@ -51,7 +51,7 @@ export default function Testimonial() {
                     <div className="serv-cove">
                         <div className="prf row mb-3">
                             <div className="col-3">
-                                <img className="rounded-pill" src="/src/assets/images/testimonial/member-02.jpg" alt=""/>
+                                <img className="rounded-pill" src="/assets/images/testimonial/member-02.jpg" alt=""/>
                             </div>
                             <div className="col-9 align-self-center">
                                 <h6 className="mb-0 fw-bolder">Praveen Thaney</h6>

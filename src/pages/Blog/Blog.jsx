@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import BlogPost from "../../components/Blog/BlogPost";
 import * as blogService from "../../services/blogService";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
+  const { user } = useAuthContext();
 
   useEffect(() => {
     blogService.getAll().then((result) => setPosts(result));
@@ -20,13 +22,13 @@ export default function Blog() {
           <div className="row">
             <h2 className="text-start">Our Blogs</h2>
             <ul>
+              {user &&
               <li>
-                {" "}
                 <Link to="/blog/create">
                   <i className="bi bi-house-door"></i> Add Blog post
                 </Link>
               </li>
-              {/* <li> <i className="bi bi-chevron-double-right pe-2"></i> Blogs</li> */}
+              }
             </ul>
           </div>
         </div>

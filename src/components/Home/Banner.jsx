@@ -16,7 +16,7 @@ export default function Banner() {
                         ligula. </p>
                 </div>
                 <div className="banner-image">
-                    <img src="./src/assets/images/h2.png" alt=""/>
+                    <img src="/assets/images/h2.png" alt=""/>
                 </div>
             </div>
         </div>

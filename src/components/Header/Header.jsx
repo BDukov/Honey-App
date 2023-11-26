@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useLogout } from "../../hooks/useLogout";
 
 //Import classes from CSS and Pictures files
-import logo from '../../assets/images/logo.png';
+import logo from '/assets/images/logo.png';
 import classes from './Header.module.css';
 import { useAuthContext } from "../../hooks/useAuthContext"
 
