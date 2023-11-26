@@ -14,6 +14,7 @@ import EditPost from './pages/Edit/EditPost'
 import HoneyDetails from './components/HoneyTypes/HoneyDetails'
 import { AuthContextProvider } from './context/AuthContext'
 import PageNotFound from './components/404/404'
+import Profile from './pages/Profile/Profile'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <Route path='/blog/:postId' element={<BlogDetails/>} />
       <Route path='/blog/:postId/edit' element={<EditPost />} />
       <Route path='/honey/:postId' element={<HoneyDetails/>} />
+      <Route path='/profile/:userId' element={<Profile/>} />
       <Route path='*' element={<PageNotFound/>} />
     </Routes>
     <Footer />

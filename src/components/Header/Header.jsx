@@ -42,7 +42,7 @@ export default function Header() {
                 <ul>
                     {!user && <li><Link to="/login">Login</Link></li>}
                     {!user && <li><Link to="/register">Register</Link></li>}            
-                    {user && <li><a href="">{user.email}</a></li>}
+                    {user && <li><a href={`/profile/${user.uid}`}>{user.email}</a></li>}
                     {user && <li><Link to="/" onClick={logout}>Logout</Link></li>}
                 </ul>
             </div>

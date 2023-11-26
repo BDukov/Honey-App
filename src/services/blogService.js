@@ -34,3 +34,11 @@ export const update = async (postId, postData) => {
 
     return result;
 }
+
+export const getAllByUserId = async () => {
+    const result = await request.get(`${baseUrl}.json?`);
+
+    const nestedObjectsArray = Object.entries(result).map(([key, value]) => ({ [key]: value }));
+
+    return nestedObjectsArray;
+}

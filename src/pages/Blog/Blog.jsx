@@ -23,9 +23,9 @@ export default function Blog() {
             <h2 className="text-start">Our Blogs</h2>
             <ul>
               {user &&
-              <li>
+              <li className="button-add-li">
                 <Link to="/blog/create">
-                  <i className="bi bi-house-door"></i> Add Blog post
+                  <i className="button-add-post"> Add Blog post</i>
                 </Link>
               </li>
               }

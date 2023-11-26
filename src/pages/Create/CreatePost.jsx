@@ -10,6 +10,7 @@ const formInitialState = {
   description: "",
   date: "",
   creator: "",
+  userId: "",
 };
 
 export default function CreatePost() {
@@ -25,6 +26,7 @@ export default function CreatePost() {
 
     //Must be changed with user id or email
     formValues.creator = user.email;
+    formValues.userId = user.uid;
 
     blogService.create(formValues);
 
