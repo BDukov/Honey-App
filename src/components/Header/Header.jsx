@@ -24,20 +24,24 @@ export default function Header() {
                     <li><a href="/">Home</a></li>
                     <li onClick={(e) => {
                         e.preventDefault();
+                        setTimeout(() => {
+                            window.scrollTo({
+                                top:document.querySelector('.about-us').offsetTop,
+                                behavior: 'smooth',
+                            })
+                        }, 500)
                         navigate('/');
-                        window.scrollTo({
-                            top:document.querySelector('.about-us').offsetTop,
-                            behavior: 'smooth',
-                        })
                     }}><a href="/">About Us</a></li>
                     
                     <li onClick={(e) => {
                         e.preventDefault();
+                        setTimeout(() => {
+                            window.scrollTo({
+                                top:document.querySelector('.types-of-honey').offsetTop,
+                                behavior: 'smooth',
+                            })
+                        }, 500);
                         navigate('/');
-                        window.scrollTo({
-                            top:document.querySelector('.types-of-honey').offsetTop,
-                            behavior: 'smooth',
-                        })
                     }}><a href="/">Honey Types</a></li>
                     <li><Link to='/blog'>Blog</Link></li>
                 </ul>
