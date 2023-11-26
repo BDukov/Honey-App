@@ -32,7 +32,7 @@ function App() {
       <Route path='/blog/create' element={<CreatePost />} />
       <Route path='/blog/:postId' element={<BlogDetails/>} />
       <Route path='/blog/:postId/edit' element={<EditPost />} />
-      <Route path='/honey/:postId' element={<HoneyDetails/>} />
+      <Route path='/honey-types/:postId' element={<HoneyDetails/>} />
       <Route path='/profile/:userId' element={<Profile/>} />
       <Route path='*' element={<PageNotFound/>} />
     </Routes>

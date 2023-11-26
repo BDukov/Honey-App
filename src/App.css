@@ -1206,7 +1206,7 @@ a {
 
 .honey-type-page .container-page {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0 0 3em 0;
   width: 1200px;
   /* background: red; */
@@ -1240,7 +1240,7 @@ a {
 }
 
 .row-honey-type img {
-  width: 300px;
+  width: 200x;
   height: auto;
 }
 
@@ -1328,6 +1328,7 @@ a {
 a {
   text-decoration: none;
 }
+
 
 /* 404 */
 
