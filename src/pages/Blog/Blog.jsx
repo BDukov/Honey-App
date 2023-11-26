@@ -40,7 +40,7 @@ export default function Blog() {
             {posts.map((post) => {
                 let keys = Object.keys(post).join('');
                 let data = Object.values(post);
-
+            
                 return <BlogPost key={keys} id={keys} {...data[0]} />
             })}
           </div>

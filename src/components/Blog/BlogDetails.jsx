@@ -100,22 +100,25 @@ export default function BlogDetails() {
               </div>
             </div>
           </div>
+          {user && user.email === post.creator && (
           <div className="details-buttons">
-            {user.email === post.creator && (
+
               <button className="edit-btn">
                 <Link className="userline-none" to={`/blog/${postId}/edit`}>
                   Edit
                 </Link>
               </button>
-            )}
-            {user.email === post.creator && (
+
+
               <button className="delete-btn" onClick={onDeleteHandler}>
                 <Link className="userline-none" to="/blog">
                   Delete
                 </Link>
               </button>
-            )}
+
           </div>
+          )}
+
         </div>
       </div>
 
