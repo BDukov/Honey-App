@@ -3,11 +3,11 @@
 
 
 <h2> Overview: </h2>
-BookBuzz is an application for literature lovers. It allows you to easily catalog your favourite books, write insightful reviews, and engage in discussions. You can share thought-provoking quotes from your favourite books, as well as edit your personal information. The project intends to unite book lovers and provide space to discover new reads, and share one's thoughts on literature. The project boasts robust features like user authentication, seamless Firebase integration, and an elegant pure CSS design.
+Honey Blog is an application for honey lovers. It allows you to write and publish blog posts, edit your posts, add images, description, and comment on posts to form discussions. Users have their own profiles where they can see and manage their posts, as well as comment on other users' posts. The project intends to unite honey lovers and provide space to discover information related to honey, such as articles, recipes, etc. The project boasts features like user authentication, seamless Firebase integration, and an elegant pure CSS design.
 
 <h1>Key Features:</h1>
 <h2> 1. Authentication:   </h2>
-Robust user authentication system enables secure registration and login.
+User authentication system enables secure registration and login.
 Personalized user profiles enhance the tailored experience.
 <p> Logged-in users can: </p>
 <ul> 
