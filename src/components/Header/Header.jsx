@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLogout } from "../../hooks/useLogout";
+import { useNavigate } from "react-router-dom";
 
 //Import classes from CSS and Pictures files
 import logo from '../../assets/images/logo.png';
@@ -10,6 +11,7 @@ import { useAuthContext } from "../../hooks/useAuthContext"
 export default function Header() {
     const { logout } = useLogout();
     const { user } = useAuthContext();
+    const navigate = useNavigate();
 
   return (
     
@@ -22,19 +24,21 @@ export default function Header() {
                     <li><a href="/">Home</a></li>
                     <li onClick={(e) => {
                         e.preventDefault();
+                        navigate('/');
                         window.scrollTo({
                             top:document.querySelector('.about-us').offsetTop,
                             behavior: 'smooth',
                         })
-                    }}><a href="#">About Us</a></li>
+                    }}><a href="/">About Us</a></li>
                     
                     <li onClick={(e) => {
                         e.preventDefault();
+                        navigate('/');
                         window.scrollTo({
                             top:document.querySelector('.types-of-honey').offsetTop,
                             behavior: 'smooth',
                         })
-                    }}><a href="#">Honey Types</a></li>
+                    }}><a href="/">Honey Types</a></li>
                     <li><Link to='/blog'>Blog</Link></li>
                 </ul>
             </div>
