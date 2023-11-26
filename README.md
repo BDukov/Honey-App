@@ -69,18 +69,17 @@ Honey App exemplifies mastery in React development, Firebase integration, and re
 <h1> Screenshots </h1>
 <h2> Home Page </h2>
 <img src="https://github.com/BDukov/Honey-App/assets/107854265/2c76b494-2859-4c1e-92be-f25ef597a00b"> </img>
-![HomePage](https://github.com/BDukov/Honey-App/assets/107854265/2c76b494-2859-4c1e-92be-f25ef597a00b)
 <h2>Register Page</h2>
-![Register](https://github.com/BDukov/Honey-App/assets/107854265/73512b6c-2181-4009-a0ef-0d1cd3f9b7bd)
+<img src="https://github.com/BDukov/Honey-App/assets/107854265/73512b6c-2181-4009-a0ef-0d1cd3f9b7bd"></img>
 <h2>Login Page</h2>
-![Login](https://github.com/BDukov/Honey-App/assets/107854265/46152b6e-afca-400b-9434-9d357eaf037a)
+<img src="https://github.com/BDukov/Honey-App/assets/107854265/46152b6e-afca-400b-9434-9d357eaf037a"></img>
 <h2>Blog Page</h2>
-![Blog Page](https://github.com/BDukov/Honey-App/assets/107854265/ecdf11a7-45a8-407f-98a8-7ae07b6574cb)
+<img src="https://github.com/BDukov/Honey-App/assets/107854265/ecdf11a7-45a8-407f-98a8-7ae07b6574cb"></img>
 <h2>Add Blog Post Page</h2>
-![Create-Blog Post](https://github.com/BDukov/Honey-App/assets/107854265/8b58e225-33ee-4dba-866b-78c83c0dd89a)
+<img src="https://github.com/BDukov/Honey-App/assets/107854265/8b58e225-33ee-4dba-866b-78c83c0dd89a"></img>
 <h2>Details Page</h2>
-![Details Page](https://github.com/BDukov/Honey-App/assets/107854265/a7f474ee-2e78-4a47-ac62-50227a4a6531)
+<img src="https://github.com/BDukov/Honey-App/assets/107854265/a7f474ee-2e78-4a47-ac62-50227a4a6531"></img>
 <h2>Profile Page</h2>
-![Profile Page](https://github.com/BDukov/Honey-App/assets/107854265/2bd62670-f255-4dba-ac07-6882abb7db7c)
+<img src="https://github.com/BDukov/Honey-App/assets/107854265/2bd62670-f255-4dba-ac07-6882abb7db7c"></img>
 <h2>Error Page</h2>
-![Error Page](https://github.com/BDukov/Honey-App/assets/107854265/bbbe5094-3223-43b0-b8b8-8e55f0fc2bf8)
+<img src="https://github.com/BDukov/Honey-App/assets/107854265/bbbe5094-3223-43b0-b8b8-8e55f0fc2bf8"></img>
