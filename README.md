@@ -42,10 +42,7 @@ Users can submit comments for blog posts added by other users, fostering a vibra
 <li>Seamless Firebase integration as the backend database for efficient data management. </li>
 <li> Real-time synchronization ensures fluid user interactions and data updates.</li>
 </ul>
-<h2> 9. Deployment:  </h2>
-<ul>
-  <li> You can reach BookBuzZ in GitHub Pages here => https://bdukov.github.io/BookBuzZ-Angular/home</li>
-</ul>
+
 <h2> Tech Stack:  </h2>
 <p> React: Powering the frontend with dynamic and responsive interfaces.  </p>
 <p> Firebase: Providing real-time data storage and secure authentication.    </p>
