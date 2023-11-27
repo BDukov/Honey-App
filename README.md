@@ -83,4 +83,4 @@ Honey App exemplifies mastery in React development, Firebase integration, and re
 <h2>Honey Types Page</h2>
 <img src="https://github.com/BDukov/Honey-App/assets/107854265/3877b5f3-cbff-4e0c-af77-fdb0a62c5fdf"></img>
 <h2>Honey Types Details</h2>
-<img src-"https://github.com/BDukov/Honey-App/assets/107854265/84f4772a-4e8a-4303-be43-39bd9f112b32"></img>
+<img src="https://github.com/BDukov/Honey-App/assets/107854265/84f4772a-4e8a-4303-be43-39bd9f112b32"></img>
