@@ -39,7 +39,7 @@ export default function Header() {
                         navigate('/');
                     }}><a href="/">About Us</a></li>
                     
-                    <li onClick={(e) => {
+                    {/* <li onClick={(e) => {
                         e.preventDefault();
                         setTimeout(() => {
                             window.scrollTo({
@@ -48,7 +48,8 @@ export default function Header() {
                             })
                         }, 500);
                         navigate('/');
-                    }}><a href="/">Honey Types</a></li>
+                    }}><a href="/">Honey Types</a></li> */}
+                    <li><Link to='/honey-types'>Honey Types</Link></li>
                     <li><Link to='/blog'>Blog</Link></li>
                 </ul>
             </div>

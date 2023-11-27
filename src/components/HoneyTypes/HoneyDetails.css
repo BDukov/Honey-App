@@ -1,0 +1,56 @@
+.details-page .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-page .honey-details {
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+
+}
+
+.honey-details .honey-img {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    height: auto;
+}
+
+.honey-details img {
+    display: block;
+    width: 200px;
+    height: auto;
+
+}
+
+.honey-details .honey-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 0 0 2em 0;
+}
+
+.honey-details .details-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2em;
+    gap: 1em;
+    margin-left: 2em
+}
+
+.honey-details .details-buttons a {
+    color: white;
+}
+
+.honey-details .details-buttons:hover,
+.honey-details .details-buttons a:hover {
+    color: #f16f7e;
+}

@@ -1,12 +1,18 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useNavigate } from "react-router-dom";
 
 import * as honeyTypeService from "../../services/honeyTypeService";
+
+import "./HoneyDetails.css";
 
 export default function HoneyDetails() {
   const [post, setPost] = useState({});
   const { postId } = useParams();
+  const { user } = useAuthContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     honeyTypeService.getOne(postId).then(setPost);
@@ -15,6 +21,13 @@ export default function HoneyDetails() {
   useEffect(() => {
     honeyTypeService.getOne(postId).then(setPost);
   }, [post]);
+
+  const onDeleteHandler = () => {
+    alert("Are you sure you want to delete this post?");
+    honeyTypeService.deleteOne(postId).then(() => {
+      navigate("/honey-types");
+    });
+  }
 
   return (
     <>
@@ -34,15 +47,30 @@ export default function HoneyDetails() {
 
       <div className="details-page">
         <div className="container">
-          <div className="post-details">
-            <div className="post-img">
+          <div className="honey-details">
+            <div className="honey-img">
               <img src={post.imageUrl} alt="" />
             </div>
-            <div className="post-info">
-              <h2>{post.title}</h2>
-              <p>{post.description}</p>
-              <div className="creator-info"></div>
+            <div className="honey-info">
+              <h2 className="title">{post.title}</h2>
+              <p className="description">{post.description}</p>
             </div>
+            {user && user.email === "admin@abv.bg" &&
+            <div className="details-buttons">
+            <button className="edit-btn">
+                <Link className="userline-none" to={`/honey-types/${postId}/edit`}>
+                  Edit
+                </Link>
+              </button>
+
+
+              <button className="delete-btn" onClick={onDeleteHandler}>
+                <Link className="userline-none" to="/honey-types">
+                  Delete
+                </Link>
+              </button>
+            </div>
+            }
           </div>
         </div>
       </div>

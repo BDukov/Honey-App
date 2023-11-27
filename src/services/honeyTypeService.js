@@ -13,7 +13,6 @@ export const getAll = async () => {
 export const getOne = async (postId) => {
     const result = await request.get(`${baseUrl}/${postId}.json`, );
 
-    console.log(result);
     return result;
 }
 

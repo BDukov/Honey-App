@@ -5,19 +5,17 @@ import { Link } from "react-router-dom";
 export default function HoneyTypeItem({ id, title, description, imageUrl }) {
   return (
     <>
-      <div className="col">
-        <div className="product-bg-white">
-          <img src={imageUrl} alt="" />
-          <div className="d-inline-block">
-            <h4 className="honey-type-1">{title}</h4>
-          </div>
-          <div className="d-inline-block mt-3">
-            <Link to={`honey-types/${id}`}>
-              <button className="btn-honey-details">Details</button>
-            </Link>
-          </div>
-        </div>
-      </div>
+                <div className="col-lg-3">
+                        <div className="product bg-white p-4 text-center shadow-md">
+                            <img src={imageUrl} alt=""/>
+                             <div className="d-inline-block">
+                                <h4 className="fw-bolder fs-5 mt-4">{title}</h4>
+                            </div>
+                            <div className="details-buttons">
+                            <Link to={`/honey-types/${id}`}> <button className="details-btn">Details</button></Link>
+                            </div>
+                        </div>
+                </div>
     </>
   );
 }
