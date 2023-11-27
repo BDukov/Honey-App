@@ -22,8 +22,16 @@ Personalized user profiles enhance the tailored experience.
   <li> Register page</li>
   <li> Blog page </li>
   <li> Blog post details page </li>
+  <li> Types Of Honey page</li>
+  <li> Types of Honey Details page</li>
 </ul>
-
+<p> Admin user can access: </p>
+<ul>
+ <li> Add new blog post </li>
+ <li> Add new Type of Honey </li>
+  <li> Edit ot Delete blog posts</li>
+  <li> Types of Honey Edit and Delete/li>
+</ul>
 <h2> 2. Blog Management: </h2>
 <ul>
   <li>Intuitive interface for effortlessly adding new blog post with titles, descriptions, creator, created date and comments. </li>
@@ -76,11 +84,11 @@ Honey App exemplifies mastery in React development, Firebase integration, and re
 <img src="https://github.com/BDukov/Honey-App/assets/107854265/8b58e225-33ee-4dba-866b-78c83c0dd89a"></img>
 <h2>Details Page</h2>
 <img src="https://github.com/BDukov/Honey-App/assets/107854265/a7f474ee-2e78-4a47-ac62-50227a4a6531"></img>
-<h2>Profile Page</h2>
-<img src="https://github.com/BDukov/Honey-App/assets/107854265/2bd62670-f255-4dba-ac07-6882abb7db7c"></img>
-<h2>Error Page</h2>
-<img src="https://github.com/BDukov/Honey-App/assets/107854265/bbbe5094-3223-43b0-b8b8-8e55f0fc2bf8"></img>
 <h2>Honey Types Page</h2>
 <img src="https://github.com/BDukov/Honey-App/assets/107854265/3877b5f3-cbff-4e0c-af77-fdb0a62c5fdf"></img>
 <h2>Honey Types Details</h2>
 <img src="https://github.com/BDukov/Honey-App/assets/107854265/84f4772a-4e8a-4303-be43-39bd9f112b32"></img>
+<h2>Profile Page</h2>
+<img src="https://github.com/BDukov/Honey-App/assets/107854265/2bd62670-f255-4dba-ac07-6882abb7db7c"></img>
+<h2>Error Page</h2>
+<img src="https://github.com/BDukov/Honey-App/assets/107854265/bbbe5094-3223-43b0-b8b8-8e55f0fc2bf8"></img>
