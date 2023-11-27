@@ -24,7 +24,7 @@ export default function AddHoneyType() {
   
 
   
-      honeyTypeService.create(formValues);
+      await honeyTypeService.create(formValues);
   
       navigate("/honey-types");
     };

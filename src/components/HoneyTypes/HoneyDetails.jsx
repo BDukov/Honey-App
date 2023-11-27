@@ -22,9 +22,9 @@ export default function HoneyDetails() {
     honeyTypeService.getOne(postId).then(setPost);
   }, [post]);
 
-  const onDeleteHandler = () => {
+  const onDeleteHandler = async () => {
     alert("Are you sure you want to delete this post?");
-    honeyTypeService.deleteOne(postId).then(() => {
+    await honeyTypeService.deleteOne(postId).then(() => {
       navigate("/honey-types");
     });
   }

@@ -12,17 +12,16 @@ export default function Blog() {
 
   useEffect(() => {
     blogService.getAll().then((result) => setPosts(result));
-  }, [posts]);
+  }, []);
 
-
-
+  
  
   return (
     <>
       <div className="page-nav">
         <div className="container">
           <div className="row">
-            <h2 className="text-start">Our Blogs</h2>
+            <h2 className="text-start">Our Blogs Posts</h2>
             <ul>
               {user &&
               <li className="button-add-li">

@@ -30,7 +30,7 @@ export default function CreatePost() {
     formValues.creator = user.email;
     formValues.userId = user.uid;
 
-    blogService.create(formValues);
+    await blogService.create(formValues);
 
     navigate("/blog");
   };

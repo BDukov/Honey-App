@@ -102,7 +102,7 @@ export default function BlogDetails() {
               </div>
             </div>
           </div>
-          {user && user.email === post.creator || user.email === "admin@abv.bg"  && (
+          {user && ((user.email === post.creator) || (user.email === "admin@abv.bg")) && (
           <div className="details-buttons">
 
               <button className="edit-btn">

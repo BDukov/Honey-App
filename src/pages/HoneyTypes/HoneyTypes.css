@@ -142,3 +142,9 @@
     border-radius: 0.3em;
     padding: 2em;
   }
+
+  .col-lg-3 img {
+    display: block;
+    width: 200px;
+    height: 250px;
+  }
