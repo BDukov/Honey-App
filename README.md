@@ -71,6 +71,10 @@ Honey App exemplifies mastery in React development, Firebase integration, and re
 <p> email: peter@abv.bg </p>
 <p> password: 123456</p>
 
+<h2> Administrator </h2>
+<p> email: admin@abv.bg </p>
+<p> password: 123456</p>
+
 <h1> Screenshots </h1>
 <h2> Home Page </h2>
 <img src="https://github.com/BDukov/Honey-App/assets/107854265/2c76b494-2859-4c1e-92be-f25ef597a00b"> </img>
