@@ -10,7 +10,7 @@ export default function Blog() {
   const [posts, setPosts] = useState([]);
   const { user } = useAuthContext();
 
-  useEffect(() => {
+  useEffect( () => {
     blogService.getAll().then((result) => setPosts(result));
   }, []);
 

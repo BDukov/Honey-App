@@ -61,9 +61,9 @@ export default function BlogDetails() {
     }));
   };
 
-  const onDeleteHandler = () => {
-    alert("Are you sure you want to delete this post?");
-    blogService.deleteOne(postId).then(() => {
+  const onDeleteHandler = async () => {
+     alert("Are you sure you want to delete this post?");
+   await blogService.deleteOne(postId).then(() => {
       navigate("/blog");
     });
   };

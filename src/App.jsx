@@ -2,6 +2,7 @@
 import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
+
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Home from './pages/Home/Home'
@@ -12,13 +13,13 @@ import CreatePost from './pages/Create/CreatePost'
 import BlogDetails from './components/Blog/BlogDetails'
 import EditPost from './pages/Edit/EditPost'
 import HoneyDetails from './components/HoneyTypes/HoneyDetails'
-import { AuthContextProvider } from './context/AuthContext'
 import PageNotFound from './components/404/404'
 import Profile from './pages/Profile/Profile'
 import HoneyTypes from './pages/HoneyTypes/HoneyTypes'
 import AddHoneyType from './pages/HoneyTypes/AddHoneyType'
 import EditHoneyType from './pages/HoneyTypes/EditHoneyType'
 
+import { AuthContextProvider } from './context/AuthContext'
 
 function App() {
 

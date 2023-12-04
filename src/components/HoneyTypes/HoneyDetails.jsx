@@ -20,6 +20,7 @@ export default function HoneyDetails() {
 
   useEffect(() => {
     honeyTypeService.getOne(postId).then(setPost);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [post]);
 
   const onDeleteHandler = async () => {

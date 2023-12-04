@@ -80,7 +80,7 @@ export default function CreatePost() {
           <br />
 
           <label>Description:</label>
-          <input
+          <textarea
             className="description"
             name="description"
             id="description"
