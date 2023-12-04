@@ -40,7 +40,7 @@ export default function EditHoneyType() {
   
       formValues.date = new Date().toLocaleDateString();
   
-      honeyTypeService.update(postId, formValues);
+     await honeyTypeService.update(postId, formValues);
   
       navigate(`/honey-types/${postId}`);
     };

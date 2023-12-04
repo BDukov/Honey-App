@@ -13,6 +13,25 @@
     /* font-size: 1.5em; */
     font-weight: 500;
   }
+
+  .nav-links .add-button{
+    background: #f16f7e;
+    border: 1px solid #f16f7e;
+    border-radius: 0.3em;
+    padding: 0.5em 1em;
+    font-size: 0.8em;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .nav-links .add-button:hover{
+    background: white;
+    color: #f16f7e;
+    border: 2px solid #f16f7e;
+  }
   
   .honey-type-page {
     /* margin-bottom: 5em; */

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -19,6 +21,7 @@ export default function BlogDetails() {
   const [post, setPost] = useState({});
   const { postId } = useParams();
   const [comments, setComments] = useState([]);
+  const [runComment, setRunComment] = useState(0);
 
   const [formValues, setFormValues] = useState(formInitialState);
 
@@ -34,11 +37,12 @@ export default function BlogDetails() {
 
   useEffect(() => {
     commentsService.getAll(postId).then(setComments);
-  }, [comments]);
+    setRunComment(0);
+  }, [runComment]);
 
-  useEffect(() => {
-    blogService.getOne(postId).then(setPost);
-  }, [post]);
+  // useEffect(() => {
+  //   blogService.getOne(postId).then(setPost);
+  // }, [post]);
 
   const addCommentHandler = async (e) => {
     e.preventDefault();
@@ -49,7 +53,8 @@ export default function BlogDetails() {
       formValues.comment
     );
 
-    setComments((state) => [...state, newComment]);
+    setComments((prevComments) => [...prevComments, newComment]);
+    setRunComment(1);
 
     setFormValues(formInitialState);
   };
@@ -62,8 +67,8 @@ export default function BlogDetails() {
   };
 
   const onDeleteHandler = async () => {
-     alert("Are you sure you want to delete this post?");
-   await blogService.deleteOne(postId).then(() => {
+    alert("Are you sure you want to delete this post?");
+    await blogService.deleteOne(postId).then(() => {
       navigate("/blog");
     });
   };
@@ -102,25 +107,22 @@ export default function BlogDetails() {
               </div>
             </div>
           </div>
-          {user && ((user.email === post.creator) || (user.email === "admin@abv.bg")) && (
-          <div className="details-buttons">
+          {user &&
+            (user.email === post.creator || user.email === "admin@abv.bg") && (
+              <div className="details-buttons">
+                <button className="edit-btn">
+                  <Link className="userline-none" to={`/blog/${postId}/edit`}>
+                    Edit
+                  </Link>
+                </button>
 
-              <button className="edit-btn">
-                <Link className="userline-none" to={`/blog/${postId}/edit`}>
-                  Edit
-                </Link>
-              </button>
-
-
-              <button className="delete-btn" onClick={onDeleteHandler}>
-                <Link className="userline-none" to="/blog">
-                  Delete
-                </Link>
-              </button>
-
-          </div>
-          )}
-
+                <button className="delete-btn" onClick={onDeleteHandler}>
+                  <Link className="userline-none" to="/blog">
+                    Delete
+                  </Link>
+                </button>
+              </div>
+            )}
         </div>
       </div>
 
@@ -145,22 +147,26 @@ export default function BlogDetails() {
 
           {comments.length === 0 && <p className="no-comment">No comments.</p>}
 
-         {user &&  <article className="create-comment">
-        
-            <label>Add new comment:</label>
-            <form className="form" onSubmit={addCommentHandler}>
-              <br />
-              <input
-                name="comment"
-                value={formValues.comment}
-                onChange={changeHandler}
-                placeholder="Comment......"
-              ></input>{" "}
-              <br />
-              <input className="btn-submit" type="submit" value="Add Comment" />
-            </form>
-          </article>
-}
+          {user && (
+            <article className="create-comment">
+              <label>Add new comment:</label>
+              <form className="form" onSubmit={addCommentHandler}>
+                <br />
+                <input
+                  name="comment"
+                  value={formValues.comment}
+                  onChange={changeHandler}
+                  placeholder="Comment......"
+                ></input>{" "}
+                <br />
+                <input
+                  className="btn-submit"
+                  type="submit"
+                  value="Add Comment"
+                />
+              </form>
+            </article>
+          )}
         </div>
       </div>
     </>

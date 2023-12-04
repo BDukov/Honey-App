@@ -18,10 +18,10 @@ export default function HoneyDetails() {
     honeyTypeService.getOne(postId).then(setPost);
   }, [postId]);
 
-  useEffect(() => {
-    honeyTypeService.getOne(postId).then(setPost);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [post]);
+  // useEffect(() => {
+  //   honeyTypeService.getOne(postId).then(setPost);
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [post]);
 
   const onDeleteHandler = async () => {
     alert("Are you sure you want to delete this post?");

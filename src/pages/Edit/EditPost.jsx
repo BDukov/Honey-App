@@ -48,8 +48,7 @@ export default function EditPost() {
     formValues.creator = user.email;
     formValues.userId = user.uid;
 
-    console.log(formValues);
-    blogService.update(postId, formValues);
+    await blogService.update(postId, formValues);
 
     navigate(`/blog/${postId}`);
   };

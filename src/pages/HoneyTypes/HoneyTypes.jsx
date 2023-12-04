@@ -15,7 +15,7 @@ export default function HoneyTypes() {
         honeyTypesService.getAll().then(res => {
             setHoneyTypes(res);
         });
-    }, []);
+    }, [honeyTypes]);
 
     return (
 <>
@@ -29,7 +29,7 @@ export default function HoneyTypes() {
               </li>
               {user && user.email ==="admin@abv.bg" &&
               <li>
-                <Link to="/honey-types/add-honey">Add Honey Type</Link>
+                <Link className="add-button" to="/honey-types/add-honey">Add Honey Type</Link>
               </li>
               }
             </ul>
