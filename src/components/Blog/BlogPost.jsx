@@ -9,8 +9,10 @@ export default function BlogPost({
     date,
     description,
     imageUrl,
-    title
+    title,
+    constanta
 }) {
+
     return(
         <>
         <Link to={`/blog/${id}`}>

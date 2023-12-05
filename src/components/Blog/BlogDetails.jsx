@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -40,10 +40,6 @@ export default function BlogDetails() {
     setRunComment(0);
   }, [runComment]);
 
-  // useEffect(() => {
-  //   blogService.getOne(postId).then(setPost);
-  // }, [post]);
-
   const addCommentHandler = async (e) => {
     e.preventDefault();
 
@@ -67,10 +63,13 @@ export default function BlogDetails() {
   };
 
   const onDeleteHandler = async () => {
-    alert("Are you sure you want to delete this post?");
-    await blogService.deleteOne(postId).then(() => {
-      navigate("/blog");
-    });
+    const hasConfirmed = window.confirm("Are you sure you want to delete this post?");
+
+    if(hasConfirmed) {
+      await blogService.deleteOne(postId);
+      
+      navigate('/blog');
+    }
   };
 
   return (

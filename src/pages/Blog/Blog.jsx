@@ -8,21 +8,11 @@ import "./Blog.css";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
-  const { user } = useAuthContext();
-  
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await blogService.getAll();
-  //     setPosts(result);
-  //   };
-
-  //   fetchData();
-  // }, [posts]);
+  const { user } = useAuthContext();  
 
   useEffect(() => {
     blogService.getAll().then((result) => setPosts(result));
-  }, [posts]);
+  }, []);
 
   return (
     <>

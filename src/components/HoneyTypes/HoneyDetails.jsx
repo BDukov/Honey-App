@@ -24,11 +24,15 @@ export default function HoneyDetails() {
   // }, [post]);
 
   const onDeleteHandler = async () => {
-    alert("Are you sure you want to delete this post?");
-    await honeyTypeService.deleteOne(postId).then(() => {
+    const hasConfirmed = window.confirm(
+      "Are you sure you want to delete this post?"
+    );
+    if (hasConfirmed) {
+      await honeyTypeService.deleteOne(postId);
+
       navigate("/honey-types");
-    });
-  }
+    }
+  };
 
   return (
     <>
@@ -56,22 +60,24 @@ export default function HoneyDetails() {
               <h2 className="title">{post.title}</h2>
               <p className="description">{post.description}</p>
             </div>
-            {user && user.email === "admin@abv.bg" &&
-            <div className="details-buttons">
-            <button className="edit-btn">
-                <Link className="userline-none" to={`/honey-types/${postId}/edit`}>
-                  Edit
-                </Link>
-              </button>
+            {user && user.email === "admin@abv.bg" && (
+              <div className="details-buttons">
+                <button className="edit-btn">
+                  <Link
+                    className="userline-none"
+                    to={`/honey-types/${postId}/edit`}
+                  >
+                    Edit
+                  </Link>
+                </button>
 
-
-              <button className="delete-btn" onClick={onDeleteHandler}>
-                <Link className="userline-none" to="/honey-types">
-                  Delete
-                </Link>
-              </button>
-            </div>
-            }
+                <button className="delete-btn" onClick={onDeleteHandler}>
+                  <Link className="userline-none" to="/honey-types">
+                    Delete
+                  </Link>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
