@@ -17,22 +17,54 @@ const formInitialState = {
 
 export default function CreatePost() {
   const [formValues, setFormValues] = useState(formInitialState);
+  const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
 
   const {user} = useAuthContext();
 
+  const validateTitle = () => {
+    const errors = {};
+    if (formValues.title.length < 3) {
+      errors.title = "Title must be at least 3 symbols";
+    }
+    setFormErrors(errors);
+    return errors;
+  }
+
+  const validateImageUrl = () => {
+    const errors = {};
+    if (formValues.imageUrl.length < 10) {
+      errors.imageUrl = "Image url must be at least 10 symbols";
+    }
+    setFormErrors(errors);
+    return errors;
+  }
+
+  const validateDescription = () => {
+    const errors = {};
+    if (formValues.description.length < 20) {
+      errors.description = "Description must be at least 20 symbols";
+    }
+    setFormErrors(errors);
+    return errors;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    formValues.date = new Date().toLocaleDateString();
+    validateTitle();
+    validateImageUrl();
+    validateDescription();
 
-    //Must be changed with user id or email
-    formValues.creator = user.email;
-    formValues.userId = user.uid;
+    if (Object.keys(formErrors).length === 0) {
+      formValues.date = new Date().toLocaleDateString();
+      formValues.creator = user.email;
+      formValues.userId = user.uid;
+      
+      await blogService.create(formValues);
+      navigate("/blog");
+    }
 
-    await blogService.create(formValues);
-
-    navigate("/blog");
   };
 
   const changeHandler = (e) => {
@@ -40,6 +72,19 @@ export default function CreatePost() {
       ...state,
       [e.target.name]: e.target.value,
     }));
+    switch(e.target.name) {
+      case "title":
+        validateTitle();
+        break;
+      case "imageUrl":
+        validateImageUrl();
+        break;
+      case "description":
+        validateDescription();
+        break;
+      default:
+        break;
+    }
   };
 
 //   const resetFormHandler = () => {
@@ -64,7 +109,8 @@ export default function CreatePost() {
             onChange={changeHandler}
             placeholder="Enter title..."
             required
-          />
+            />
+            {formErrors.title && (<span className="error">{formErrors.title}</span>)}
           <br />
 
           <label>Image:</label>
@@ -77,6 +123,7 @@ export default function CreatePost() {
             placeholder="Enter image url..."
             required
           />
+          {formErrors.imageUrl && (<span className="error">{formErrors.imageUrl}</span>)}
           <br />
 
           <label>Description:</label>
@@ -89,6 +136,7 @@ export default function CreatePost() {
             placeholder="Enter description here..."
             required
           />
+          {formErrors.description && (<span className="error">{formErrors.description}</span>)}
           {/* <input name="description" value={formValues.description} onChange={changeHandler} /> */}
 
           <button type="submit" className="btn">

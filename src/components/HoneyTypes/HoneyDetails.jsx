@@ -24,7 +24,7 @@ export default function HoneyDetails() {
   // }, [post]);
 
   const onDeleteHandler = async () => {
-    const hasConfirmed = window.confirm(
+      const hasConfirmed = window.confirm(
       "Are you sure you want to delete this post?"
     );
     if (hasConfirmed) {
