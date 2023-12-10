@@ -1,6 +1,7 @@
 .details-page .container {
     display: flex;
     flex-direction: column;
+    min-height: 60vh;
 }
 
 .details-page .honey-details {
@@ -11,6 +12,7 @@
     justify-content: center;
     gap: 0;
     padding: 0;
+    margin-top: 5em;
 
 }
 
