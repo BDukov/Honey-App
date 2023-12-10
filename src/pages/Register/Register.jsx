@@ -12,6 +12,7 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (password !== repassword) {
       setErrors({ password: "Passwords don't match!" });
       return;
@@ -19,6 +20,23 @@ export default function Register() {
     setErrors({});
     register(email, password);
   };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value.trim());
+  }
+
+  const handlePasswordChange = (e) => {
+    const trimmedValue = e.target.value.trim();
+    setPassword(trimmedValue);
+    setErrors({});
+  }
+
+  const handleRepasswordChange = (e) => {
+    const trimmedValue = e.target.value.trim();
+    setRepassword(trimmedValue);
+    setErrors({});
+  };
+
 
   return (
     <>
@@ -34,7 +52,7 @@ export default function Register() {
                 <input
                   required
                   type="email"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleEmailChange}
                   value={email}
                   className="form-control"
                   id="email"
@@ -45,7 +63,7 @@ export default function Register() {
                 <input
                   required
                   type="password"
-                  onChange={(e) => {setPassword(e.target.value); setErrors({})}}
+                  onChange={handlePasswordChange}
                   value={password}
                   className="form-control"
                   id="password"
@@ -56,7 +74,7 @@ export default function Register() {
                 <input
                   required
                   type="password"
-                  onChange={(e) => {setRepassword(e.target.value); setErrors({})}}
+                  onChange={handleRepasswordChange}
                   value={repassword}
                   className="form-control"
                   id="repassword"
