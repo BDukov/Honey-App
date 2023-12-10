@@ -12,7 +12,7 @@ export default function Blog() {
 
   useEffect(() => {
     blogService.getAll().then((result) => setPosts(result));
-  }, []);
+  }, [posts]);
 
   return (
     <>

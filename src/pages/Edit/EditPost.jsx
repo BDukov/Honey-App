@@ -18,6 +18,8 @@ import "./EditPost.css";
 export default function EditPost() {
   const [post, setPost] = useState({});
   const [formValues, setFormValues] = useState(initialFormState);
+  const [formErrors, setFormErrors] = useState({});
+  
   const { postId } = useParams();
   const navigate = useNavigate();
   const { user } = useAuthContext();
@@ -57,8 +59,50 @@ export default function EditPost() {
     setFormValues((state) => ({
       ...state,
       [e.target.name]: e.target.value,
+      
     }));
+
+    switch(e.target.name) {
+      case "title":
+        validateTitle();
+        break;
+      case "imageUrl":
+        validateImageUrl();
+        break;
+      case "description":
+        validateDescription();
+        break;
+      default:
+        break;
+    }
+
   };
+  const validateTitle = () => {
+    const errors = {};
+    if (formValues.title.length < 3) {
+      errors.title = "Title must be at least 3 symbols";
+    }
+    setFormErrors(errors);
+    return errors;
+  }
+
+  const validateImageUrl = () => {
+    const errors = {};
+    if (formValues.imageUrl.length < 10) {
+      errors.imageUrl = "Image url must be at least 10 symbols";
+    }
+    setFormErrors(errors);
+    return errors;
+  }
+
+  const validateDescription = () => {
+    const errors = {};
+    if (formValues.description.length < 20) {
+      errors.description = "Description must be at least 20 symbols";
+    }
+    setFormErrors(errors);
+    return errors;
+  }
 
     return(
         <div className="edit-post">
@@ -74,6 +118,7 @@ export default function EditPost() {
               onChange={changeHandler}
               placeholder="Enter title..."
             />
+             {formErrors.title && (<span className="error">{formErrors.title}</span>)}
             <br />
   
             <label>Image:</label>
@@ -85,6 +130,7 @@ export default function EditPost() {
               onChange={changeHandler}
               placeholder="Enter image url..."
             />
+            {formErrors.imageUrl && (<span className="error">{formErrors.imageUrl}</span>)}
             <br />
   
             <label>Description:</label>
@@ -97,6 +143,7 @@ export default function EditPost() {
               placeholder="Enter description here..."
             />
             {/* <input name="description" value={formValues.description} onChange={changeHandler} /> */}
+            {formErrors.description && (<span className="error">{formErrors.description}</span>)}
   
             <button type="submit" className="btn">
               Submit

@@ -69,6 +69,8 @@ export default function BlogDetails() {
       await blogService.deleteOne(postId);
       
       navigate('/blog');
+    } else {
+      return;
     }
   };
 
