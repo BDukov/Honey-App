@@ -20,7 +20,7 @@ export default function CreatePost() {
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
 
-  const {user} = useAuthContext();
+  const { user } = useAuthContext();
 
   const validateTitle = () => {
     const errors = {};
@@ -29,7 +29,7 @@ export default function CreatePost() {
     }
     setFormErrors(errors);
     return errors;
-  }
+  };
 
   const validateImageUrl = () => {
     const errors = {};
@@ -38,7 +38,7 @@ export default function CreatePost() {
     }
     setFormErrors(errors);
     return errors;
-  }
+  };
 
   const validateDescription = () => {
     const errors = {};
@@ -47,7 +47,7 @@ export default function CreatePost() {
     }
     setFormErrors(errors);
     return errors;
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,11 +60,10 @@ export default function CreatePost() {
       formValues.date = new Date().toLocaleDateString();
       formValues.creator = user.email;
       formValues.userId = user.uid;
-      
+
       await blogService.create(formValues);
       navigate("/blog");
     }
-
   };
 
   const changeHandler = (e) => {
@@ -72,7 +71,7 @@ export default function CreatePost() {
       ...state,
       [e.target.name]: e.target.value,
     }));
-    switch(e.target.name) {
+    switch (e.target.name) {
       case "title":
         validateTitle();
         break;
@@ -87,13 +86,13 @@ export default function CreatePost() {
     }
   };
 
-//   const resetFormHandler = () => {
-//     setFormValues(formInitialState);
-//   };
+  //   const resetFormHandler = () => {
+  //     setFormValues(formInitialState);
+  //   };
 
-//   const submitHandler = () => {
-//     resetFormHandler();
-//   };
+  //   const submitHandler = () => {
+  //     resetFormHandler();
+  //   };
 
   return (
     <div className="create-post">
@@ -109,8 +108,10 @@ export default function CreatePost() {
             onChange={changeHandler}
             placeholder="Enter title..."
             required
-            />
-            {formErrors.title && (<span className="error">{formErrors.title}</span>)}
+          />
+          {formErrors.title && (
+            <span className="error">{formErrors.title}</span>
+          )}
           <br />
 
           <label>Image:</label>
@@ -123,7 +124,9 @@ export default function CreatePost() {
             placeholder="Enter image url..."
             required
           />
-          {formErrors.imageUrl && (<span className="error">{formErrors.imageUrl}</span>)}
+          {formErrors.imageUrl && (
+            <span className="error">{formErrors.imageUrl}</span>
+          )}
           <br />
 
           <label>Description:</label>
@@ -136,7 +139,9 @@ export default function CreatePost() {
             placeholder="Enter description here..."
             required
           />
-          {formErrors.description && (<span className="error">{formErrors.description}</span>)}
+          {formErrors.description && (
+            <span className="error">{formErrors.description}</span>
+          )}
           {/* <input name="description" value={formValues.description} onChange={changeHandler} /> */}
 
           <button type="submit" className="btn">

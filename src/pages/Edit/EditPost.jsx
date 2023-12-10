@@ -7,7 +7,7 @@ import * as blogService from "../../services/blogService";
 
 import "./EditPost.css";
 
- const initialFormState = {
+const initialFormState = {
   title: "",
   imageUrl: "",
   description: "",
@@ -19,7 +19,7 @@ export default function EditPost() {
   const [post, setPost] = useState({});
   const [formValues, setFormValues] = useState(initialFormState);
   const [formErrors, setFormErrors] = useState({});
-  
+
   const { postId } = useParams();
   const navigate = useNavigate();
   const { user } = useAuthContext();
@@ -27,8 +27,7 @@ export default function EditPost() {
   console.log(formValues);
 
   useEffect(() => {
-    blogService.getOne(postId)
-    .then(setPost)
+    blogService.getOne(postId).then(setPost);
   }, [postId]);
 
   useEffect(() => {
@@ -38,7 +37,7 @@ export default function EditPost() {
       description: post.description,
       date: post.date,
       creator: post.creator,
-    })
+    });
   }, [post]);
 
   const handleSubmit = async (e) => {
@@ -59,10 +58,9 @@ export default function EditPost() {
     setFormValues((state) => ({
       ...state,
       [e.target.name]: e.target.value,
-      
     }));
 
-    switch(e.target.name) {
+    switch (e.target.name) {
       case "title":
         validateTitle();
         break;
@@ -75,7 +73,6 @@ export default function EditPost() {
       default:
         break;
     }
-
   };
   const validateTitle = () => {
     const errors = {};
@@ -84,7 +81,7 @@ export default function EditPost() {
     }
     setFormErrors(errors);
     return errors;
-  }
+  };
 
   const validateImageUrl = () => {
     const errors = {};
@@ -93,7 +90,7 @@ export default function EditPost() {
     }
     setFormErrors(errors);
     return errors;
-  }
+  };
 
   const validateDescription = () => {
     const errors = {};
@@ -102,54 +99,60 @@ export default function EditPost() {
     }
     setFormErrors(errors);
     return errors;
-  }
+  };
 
-    return(
-        <div className="edit-post">
-        <form id="edit" onSubmit={handleSubmit}>
-          <div className="container">
-            <h1>Edit Blog-Post</h1>
-            <label>Title:</label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              value={formValues.title}
-              onChange={changeHandler}
-              placeholder="Enter title..."
-            />
-             {formErrors.title && (<span className="error">{formErrors.title}</span>)}
-            <br />
-  
-            <label>Image:</label>
-            <input
-              type="text"
-              id="imageUrl"
-              name="imageUrl"
-              value={formValues.imageUrl}
-              onChange={changeHandler}
-              placeholder="Enter image url..."
-            />
-            {formErrors.imageUrl && (<span className="error">{formErrors.imageUrl}</span>)}
-            <br />
-  
-            <label>Description:</label>
-            <input
-              className="description"
-              name="description"
-              id="description"
-              value={formValues.description}
-              onChange={changeHandler}
-              placeholder="Enter description here..."
-            />
-            {/* <input name="description" value={formValues.description} onChange={changeHandler} /> */}
-            {formErrors.description && (<span className="error">{formErrors.description}</span>)}
-  
-            <button type="submit" className="btn">
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    );
+  return (
+    <div className="edit-post">
+      <form id="edit" onSubmit={handleSubmit}>
+        <div className="container">
+          <h1>Edit Blog-Post</h1>
+          <label>Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={formValues.title}
+            onChange={changeHandler}
+            placeholder="Enter title..."
+          />
+          {formErrors.title && (
+            <span className="error">{formErrors.title}</span>
+          )}
+          <br />
+
+          <label>Image:</label>
+          <input
+            type="text"
+            id="imageUrl"
+            name="imageUrl"
+            value={formValues.imageUrl}
+            onChange={changeHandler}
+            placeholder="Enter image url..."
+          />
+          {formErrors.imageUrl && (
+            <span className="error">{formErrors.imageUrl}</span>
+          )}
+          <br />
+
+          <label>Description:</label>
+          <input
+            className="description"
+            name="description"
+            id="description"
+            value={formValues.description}
+            onChange={changeHandler}
+            placeholder="Enter description here..."
+          />
+          {/* <input name="description" value={formValues.description} onChange={changeHandler} /> */}
+          {formErrors.description && (
+            <span className="error">{formErrors.description}</span>
+          )}
+
+          <button type="submit" className="btn">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 }
