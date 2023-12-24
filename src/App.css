@@ -205,3 +205,62 @@ a {
 .error-message {
   color: red;
 }
+
+
+/* RESPONSIVE */
+
+@media  (max-width: 720px){
+
+  .types-of-honey .container .row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: center; */
+  }
+
+  .testimonial .row-people {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container .about-row {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1em 0 1em;
+  }
+
+  .container .products-row {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container .row-blog{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 1060px) {
+  .container .row-blog{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 920px) {
+  #root ._nav_1xobb_47{
+    display: flex;
+    flex-direction: column;
+  }
+}
