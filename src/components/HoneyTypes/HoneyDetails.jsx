@@ -16,7 +16,7 @@ export default function HoneyDetails() {
 
   useEffect(() => {
     honeyTypeService.getOne(postId).then(setPost);
-  }, [postId]);
+  }, []);
 
   // useEffect(() => {
   //   honeyTypeService.getOne(postId).then(setPost);

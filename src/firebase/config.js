@@ -10,13 +10,12 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDjWqev_F1A9TmFsGyRH73ZXRhXdnDBIAw",
-  authDomain: "honey-blog-db181.firebaseapp.com",
-  databaseURL: "https://honey-blog-db181-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "honey-blog-db181",
-  storageBucket: "honey-blog-db181.appspot.com",
-  messagingSenderId: "903521901822",
-  appId: "1:903521901822:web:10681a79243687779619af"
+  apiKey: "AIzaSyCLIgppNYOUfqV3JuhBZXg5Jq_Mjll7DXc",
+  authDomain: "honey-blog-app-19de5.firebaseapp.com",
+  projectId: "honey-blog-app-19de5",
+  storageBucket: "honey-blog-app-19de5.appspot.com",
+  messagingSenderId: "1089051544231",
+  appId: "1:1089051544231:web:3fa12308785bbd6daca982"
 };
 
 // Initialize Firebase

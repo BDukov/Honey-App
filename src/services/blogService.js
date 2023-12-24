@@ -1,6 +1,6 @@
 import * as request from "../lib/request";
 
-const baseUrl = 'https://honey-blog-db181-default-rtdb.europe-west1.firebasedatabase.app/blog'
+const baseUrl = 'https://honey-blog-app-19de5-default-rtdb.europe-west1.firebasedatabase.app/blog'
 
 export const getAll = async () => {
     const result = await request.get(`${baseUrl}.json`);

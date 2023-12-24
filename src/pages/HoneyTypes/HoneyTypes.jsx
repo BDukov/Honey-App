@@ -15,7 +15,7 @@ export default function HoneyTypes() {
         honeyTypesService.getAll().then(res => {
             setHoneyTypes(res);
         });
-    }, [honeyTypes]);
+    }, []);
 
     return (
 <>
